@@ -1,0 +1,21 @@
+header{
+    font-size: 25px;
+}
+section {
+    display: flex;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+}
+label {
+    margin-right: 10px;
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid rgba(204, 204, 204, 1);
+}
+th, td {
+    border: 1px solid rgba(204, 204, 204, 1);
+    padding: 8px;
+}

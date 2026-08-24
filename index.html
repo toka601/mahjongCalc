@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>点数計算ツール</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>点数計算ツール</header>
+
+        <section>
+            <label>自家</label>
+            <input type="radio" name="jicha" value="child" checked>子</input>
+            <input type="radio" name="jicha" value="parent">親</input>
+        </section>
+
+        <section>
+            <label>飜数</label>
+            <select id="han">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13以上</option>
+            </select>
+        </section>
+
+        <section>
+            <label>副底</label>
+            <div>20</div>
+        </section>
+
+        <section>
+            <label>和了がり方</label>
+            <input type="radio" name="hora" value="---" checked>---</input>
+            <input type="radio" name="hora" value="tsumo">ツモ</input>
+            <input type="radio" name="hora" value="ron">門前ロン</input>
+        </section>
+
+        <section>
+            <label>面子</label>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>中張牌</th>
+                    <th>幺九牌</th>
+                </tr>
+                <tr>
+                    <td>明刻</td>
+                    <td>
+                        <select id="chun_m3">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="yao_m3">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>暗刻</td>
+                    <td>
+                        <select id="chun_a3">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四暗刻-->
+                        </select>
+                    </td>
+                    <td>
+                        <select id="yao_a3">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四暗刻-->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>明槓</td>
+                    <td>
+                        <select id="chun_m4">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四槓子-->
+                        </select>
+                    </td>
+                    <td>
+                        <select id="yao_m4">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四槓子-->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>暗槓</td>
+                    <td>
+                        <select id="chun_a4">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四槓子+四暗刻単騎-->
+                        </select>
+                    </td>
+                    <td>
+                        <select id="yao_a4">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option><!--四槓子+四暗刻単騎-->
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <label>雀頭</label>
+            <input type="radio" name="janto" value="---" checked>---</input>
+            <input type="radio" name="janto" value="jifu">自風牌</input>
+            <input type="radio" name="janto" value="bafu">場風牌</input>
+            <input type="radio" name="janto" value="renfu">連風牌(自場風牌)</input>
+            <input type="radio" name="janto" value="sangen">三元牌</input>
+
+        </section>
+
+        <section>
+            <label>待ち方</label>
+            <input type="radio" name="machi" value="---" checked>---</input>
+            <input type="radio" name="machi" value="tanki">単騎待ち</input>
+            <input type="radio" name="machi" value="kanchan">嵌張待ち</input>
+            <input type="radio" name="machi" value="penchan">辺張待ち</input>
+        </section>
+
+        <section>
+            <label>例外</label>
+            <input type="radio" name="exception" value="---" checked>---</input>
+            <input type="radio" name="exception" value="pinfu">平和</input>
+            <input type="radio" name="exception" value="chitoi">七対子</input>
+        </section>
+
+        <button id="resultButton">
+            計算結果
+        </button>
+
+        <div id="result">
+            <div id="resultFu">0</div>
+            <div>↓</div>
+            <div id="finalResultFu">0</div>
+            <div id="resultScore0"></div>
+            <div id="resultScore1"></div>
+            <div id="resultScoreT"></div>
+        </div>
+
+        <script src="calc.js"></script>
+    </body>
+</html>
