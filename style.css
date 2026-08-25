@@ -19,3 +19,13 @@ th, td {
     border: 1px solid rgba(204, 204, 204, 1);
     padding: 8px;
 }
+#finalResultHolder{
+    display: grid;
+}
+#resultJudge{
+    color: rgba(225, 100, 0, 1);
+}
+#mentsuTable select{
+    width:80px;
+    height:30px;
+}
