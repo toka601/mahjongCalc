@@ -25,6 +25,10 @@ th, td {
 #resultJudge{
     color: rgba(225, 100, 0, 1);
 }
+#resultButton{
+    width:80px;
+    height:30px;
+}
 #mentsuTable select{
     width:80px;
     height:30px;
