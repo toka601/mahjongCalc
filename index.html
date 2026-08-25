@@ -14,7 +14,7 @@
 
         <section>
             <label>自家</label>
-            <input type="radio" name="jicha" value="child" checked>子</input>
+            <input type="radio" name="jicha" value="child">子</input>
             <input type="radio" name="jicha" value="parent">親</input>
         </section>
 
@@ -51,7 +51,7 @@
 
         <section>
             <label>面子</label>
-            <table>
+            <table id="mentsuTable">
                 <tr>
                     <th></th>
                     <th>中張牌</th>
@@ -179,9 +179,14 @@
             <div id="finalResultFu">0</div>
             <div id="resultScore0"></div>
             <div id="resultScore1"></div>
-            <div id="resultScoreT"></div>
+            <div id="finalResultHolder">
+                <div id="resultJudge"></div>
+                <div id="resultScoreT"></div>
+            </div>
+
         </div>
 
+        <script src="scoreList.js"></script>
         <script src="calc.js"></script>
     </body>
 </html>
