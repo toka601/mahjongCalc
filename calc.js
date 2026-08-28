@@ -1,43 +1,4 @@
-document.getElementById("resetButton").addEventListener("click", () => {
-    // ラジオボタンを初期状態に戻す
-    document.querySelectorAll('input[type="radio"]').forEach(input => {
-        input.checked = input.defaultChecked;
-    });
-
-    // セレクトボックスを初期状態に戻す
-    document.querySelectorAll("select").forEach(select => {
-        select.selectedIndex = 0;
-    });
-
-    // 計算結果を初期状態に戻す
-    document.getElementById("resultFu").textContent = "0";
-    document.getElementById("finalResultFu").textContent = "0";
-    document.getElementById("resultScore0").textContent = "";
-    document.getElementById("resultScore1").textContent = "";
-    document.getElementById("resultJudge").textContent = "";
-    document.getElementById("resultScoreT").textContent = "";
-
-    // 面子テーブルの色を初期状態に戻す
-    document.querySelectorAll("#mentsuTable td").forEach(td => {
-        td.style.backgroundColor = "";
-    });
-});
-
-const table = document.getElementById("mentsuTable");
-
-table.querySelectorAll("select").forEach(select => {
-    select.addEventListener("change", () => {
-        if (select.value !== "0") {
-            select.parentElement.style.backgroundColor = "rgb(85, 139, 255)";
-        } else {
-            select.parentElement.style.backgroundColor = "";
-        }
-    });
-});
-
-
-const button = document.getElementById("resultButton");
-button.addEventListener(
+document.getElementById("resultButton").addEventListener(
     "click",
     ()=>{
 
@@ -112,16 +73,15 @@ button.addEventListener(
             resultPoint = Math.max(resultPoint, 30);
         }
 
-        document.getElementById("resultFu").textContent = point + "符";
-        document.getElementById("finalResultFu").textContent = resultPoint + "符";
-
         // ツモ(子to子), ツモ(子to親), ロン(子to), ツモ(親to), ロン(親to)
         const score = getScore(jicha, Number(han), resultPoint, hora);
 
+        document.getElementById("resultFu").textContent = point + "符 → " + resultPoint + "符";
+        
         if(hora === "tsumo"){
             if(jicha === "parent"){
                 document.getElementById("resultScore0").textContent = "子: " + (score[3] * 100) + "点";
-
+                document.getElementById("resultScore1").textContent = "";
                 document.getElementById("resultScoreT").textContent = "計: " + ((score[3] + score[3]) * 100) + "点";
             }else{
                 document.getElementById("resultScore0").textContent = "子: " + (score[0] * 100) + "点";
@@ -130,31 +90,15 @@ button.addEventListener(
             }
         }else{// ロン
             if(jicha === "parent"){
+                document.getElementById("resultScore0").textContent = "";
+                document.getElementById("resultScore1").textContent = "";
                 document.getElementById("resultScoreT").textContent = "計: " + (score[4] * 100) + "点";
             }else{
+                document.getElementById("resultScore0").textContent = "";
+                document.getElementById("resultScore1").textContent = "";
                 document.getElementById("resultScoreT").textContent = "計: " + (score[2] * 100) + "点";
             }
         }
-
-        
-        if((Number(han) == 3 && 70 <= resultPoint) || (Number(han) == 4 && 40 <= resultPoint) || Number(han) == 5){
-            // 満貫
-            document.getElementById("resultJudge").textContent = "満貫";
-        }else if(Number(han) == 6 || Number(han) == 7){
-            // 跳満
-            document.getElementById("resultJudge").textContent = "跳満";
-        }else if(Number(han) == 8 || Number(han) == 9 || Number(han) == 10){
-            // 倍満
-            document.getElementById("resultJudge").textContent = "倍満";
-        }else if(Number(han) == 11 || Number(han) == 12){
-            // 三倍満
-            document.getElementById("resultJudge").textContent = "三倍満";
-        }else if(Number(han) >= 13){
-            // 役満
-            document.getElementById("resultJudge").textContent = "役満";
-        }else{
-            // 通常
-            document.getElementById("resultJudge").textContent = "";
-        }
+        document.getElementById("resultJudge").textContent = score[5];
     }
 );
