@@ -26,6 +26,17 @@ select{
 #han{
     width:120px;
 }
+p, li{
+    font-size: 10px;
+}
+p{
+    margin: 0px;
+    
+}
+ul{
+    margin: 2px 0px 10px 0px;
+    padding: 0px 0px 0px 20px;
+}
 
 
 #header{
