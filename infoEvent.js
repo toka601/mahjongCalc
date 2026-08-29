@@ -6,9 +6,30 @@
  * ・点数表(ツモ)
  */
 
-// タブボタン
+const descButtons = document.querySelectorAll(".descButton");
+const descContents = document.querySelectorAll(".descContent");
+
+descButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        
+        const content = document.getElementById(button.dataset.tab);
+
+        if(content){
+            if(button.classList.contains("inactive")){
+                button.classList.remove("inactive");
+                content.classList.remove("inactive");
+
+            }else{
+                button.classList.add("inactive");
+                content.classList.add("inactive");
+            }
+        }
+    });
+});
+
+
+// タブと対応ページ
 const tabButtons = document.querySelectorAll(".tabButton");
-// 内容
 const tabContents = document.querySelectorAll(".tabContent");
 
 
