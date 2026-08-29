@@ -115,18 +115,33 @@
                     <div id="tab2" class="tabContent">
                         <h3>点数表(ロン)</h3>
                         
+                        <div class="ronScoreListMenu">
+                            <button class="ronScoreButton active" data-tab="scoreList_rp">親</button>
+                            <button class="ronScoreButton" data-tab="scoreList_rc">子</button>
+                        </div>
+
+                        <div id="scoreList_rp" class="ronScoreList active"></div>
+                        <div id="scoreList_rc" class="ronScoreList"></div>
                     </div>
 
                     <div id="tab3" class="tabContent">
                         <h3>点数表(ツモ)</h3>
 
-                        
+                        <div class="tsumoScoreListMenu">
+                            <button class="tsumoScoreButton active" data-tab="scoreList_tp">親</button>
+                            <button class="tsumoScoreButton" data-tab="scoreList_tcp">子→親</button>
+                            <button class="tsumoScoreButton" data-tab="scoreList_tcc">子→子</button>
+                        </div>
+
+                        <div id="scoreList_tp" class="tsumoScoreList active"></div>
+                        <div id="scoreList_tcp" class="tsumoScoreList"></div>
+                        <div id="scoreList_tcc" class="tsumoScoreList"></div>
                     </div>
 
                     <div id="tab4" class="tabContent">
                         <h3>その他</h3>
 
-                        
+                        書くこと未定。<br><br>ぴっぴろぴー by作者・冬華
                     </div>
 
                 </div>
