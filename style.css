@@ -1,6 +1,12 @@
-header{
-    font-size: 25px;
+header{ font-size: 25px; }
+#header{
+    display: flex;
+    align-items: center;
 }
+h2{ margin: 0; }
+h3{ margin: 0px 0px 10px 0px; }
+
+
 section {
     display: flex;
     margin: 10px;
@@ -8,10 +14,8 @@ section {
     border-radius: 5px;
     padding: 5px;
 }
-label {
-    margin-right: 10px;
-}
-table {
+section label { margin-right: 10px; }
+section table {
     border-collapse: collapse;
     border: 1px solid rgba(204, 204, 204, 1);
 }
@@ -19,34 +23,33 @@ th, td {
     border: 1px solid rgba(204, 204, 204, 1);
     padding: 8px;
 }
-select{
+.mentsu {
     width:80px;
     height:25px;
 }
 #han{
     width:120px;
-}
-p, li{
-    font-size: 10px;
+    height:25px;
 }
 p{
+    font-size: 10px;
     margin: 0px;
-
+    background-color: rgba(25, 180, 35, 0.5);
 }
 ul{
-    margin: 2px 0px 10px 0px;
-    padding: 0px 0px 0px 20px;
-}
-h3{
-    margin: 0px 0px 10px 0px;
-}
-
-
-#header{
-    display: flex;
-    align-items: center;
+        margin: 0px;
+        padding: 0px 0px 0px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 5px 5px;
+    }
+li{
+    font-size: 10px;
 }
 
+/* padding→内側 */
+/* margin→外側 */
+
+/* ヘッダー */
 #imageButton{
     background: transparent;
     border: none;
@@ -58,21 +61,30 @@ h3{
 .imageButton img {
     width: 100%;
 }
+
+/* リセット */
 #resetButton{
     width:80px;
     height:30px;
     margin-top: 10px;
 }
+
+/* 入力 */
 #inputWrap{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin-top: 10px;
 }
+
+/* 計算結果 */
 #resultButton{
     width:80px;
     height:30px;
     margin-top: 10px;
 }
+
+
+/* リザルト */
 #result{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -83,7 +95,6 @@ h3{
 	grid-template-columns: 120px 75px;
     margin-top: 10px;
 }
-
 #resultFu{
     grid-row: 1;
 	grid-column: 1 / span 2;
@@ -108,11 +119,9 @@ h3{
     color: rgba(225, 100, 0, 1);
 }
 
-/* padding→内側 */
-/* margin→外側 */
 
 
-/* ポップアップの背景 */
+/* ポップアップ関連 */
 .popupOverlay {
     display: none;
 
@@ -130,9 +139,6 @@ h3{
 
     z-index: 1000;
 }
-
-
-/* ポップアップ本体 */
 .popupWindow {
     width: 90%;
     max-width: 600px;
@@ -148,25 +154,13 @@ h3{
 
     overflow: hidden;
 }
-
-
-/* ヘッダー */
 .popupHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 10px 15px;
-
     border-bottom: 1px solid #ccc;
 }
-
-.popupHeader h2 {
-    margin: 0;
-}
-
-
-/* 閉じるボタン */
 #closeButton {
     border: none;
     background: none;
@@ -174,56 +168,58 @@ h3{
     font-size: 28px;
     cursor: pointer;
 }
-
-
-/* タブ */
 .tabMenu {
     display: flex;
-
     border-bottom: 1px solid #ccc;
-
     overflow-x: auto;
 }
-
-
-/* タブボタン */
 .tabButton {
     flex: 1;
-
     padding: 10px;
-
     border: none;
     background: #eee;
-
     cursor: pointer;
-
     white-space: nowrap;
 }
-
-
-/* 選択中のタブ */
 .tabButton.active {
     background: white;
-
     border-bottom: 3px solid #555;
 }
-
-
-/* 説明部分 */
 .tabContents {
     flex: 1;
-
     overflow-y: auto;
-
     padding: 15px;
 }
-
-
-/* タブの内容 */
 .tabContent {
     display: none;
 }
-
 .tabContent.active {
     display: block;
+}
+
+.descButton{
+    width: 100%;
+    text-align: left;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(25, 180, 35, 0.5);
+    border: none;
+}
+.descButton.inactive{
+    background-color: rgba(15, 90, 20, 0.5);
+}
+.descDiv{
+    width: 100%;
+    text-align: left;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+.descContent{
+    display: block;
+}
+.descContent.inactive{
+    display: none;
 }
