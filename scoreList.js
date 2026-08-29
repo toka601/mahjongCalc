@@ -178,14 +178,7 @@ function appendScoreTable(list, index){
             for(let i=0; i<=4; i++){
                 const th = document.createElement("th");
                 th.classList.add("scoreListCell");
-                if(i == 0){
-                    th.classList.add("scoreListSideHeader");
-                    if(index == 0 || index == 1 || index == 3){
-                        th.textContent = "1人あたり";
-                    }
-                }else{
-                    th.textContent = i + "飜";
-                }
+                if(i != 0) th.textContent = i + "飜";
                 tableHeadLabels.append(th);
             }
         table.append(tableHeadLabels);
