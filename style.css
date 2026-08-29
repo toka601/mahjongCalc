@@ -5,6 +5,7 @@ header{ font-size: 25px; }
 }
 h2{ margin: 0; }
 h3{ margin: 0px 0px 10px 0px; }
+h6{ margin: 0; }
 
 
 section {
@@ -227,9 +228,6 @@ li{
     height: 25px;
     font-size: 14px;
     text-align: center;
-}
-.scoreListSideHeader{
-    width: 70px;
 }
 .rankedScoreCell{
     display: grid;
