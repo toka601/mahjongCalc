@@ -197,25 +197,19 @@ li{
     display: block;
 }
 
-.descButton{
+.descButton, .descDiv{
     width: 100%;
     text-align: left;
     font-size: 10px;
     padding: 0px;
-    margin: 0px;
-    background-color: rgba(25, 180, 35, 0.5);
+    margin: 5px 0px 0px 0px;
     border: none;
+}
+.descButton{
+    background-color: rgba(25, 180, 35, 0.5);
 }
 .descButton.inactive{
     background-color: rgba(15, 90, 20, 0.5);
-}
-.descDiv{
-    width: 100%;
-    text-align: left;
-    font-size: 10px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
 }
 .descContent{
     display: block;
