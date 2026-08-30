@@ -29,18 +29,13 @@
                     <button id="closeButton">×</button>
                 </div>
 
-                <!-- タブ -->
-                <div class="tabMenu">
-                    <button class="tabButton active" data-tab="tab1">用語解説</button>
-                    <button class="tabButton" data-tab="tab2">点数表(ロン)</button>
-                    <button class="tabButton" data-tab="tab3">点数表(ツモ)</button>
-                    <button class="tabButton" data-tab="tab4">その他</button>
-                </div>
+                <div data-element="pages">
+                    <button data-element="tab">用語解説</button>
+                    <button data-element="tab">点数表(ロン)</button>
+                    <button data-element="tab">点数表(ツモ)</button>
+                    <button data-element="tab">その他</button>
 
-                <!-- スクロールする説明部分 -->
-                <div class="tabContents">
-
-                    <div id="tab1" class="tabContent active">
+                    <div data-element="content">
                         <h3>用語解説</h3>
 
                         <div class="descButton" data-tab="desc101">プレイヤーについて</div>
@@ -109,44 +104,38 @@
                         </div>
 
                         <div class="descDiv" data-tab="desc105">副底(ﾌｰﾃｲ)...符計算での最低点数。あらかじめ足されている20点。</div>
-
                     </div>
-
-                    <div id="tab2" class="tabContent">
+                    <div data-element="content">
                         <h3>点数表(ロン)</h3>
-                        
-                        <div class="ronScoreListMenu">
-                            <button class="ronScoreButton active" data-tab="scoreList_rp">親</button>
-                            <button class="ronScoreButton" data-tab="scoreList_rc">子</button>
+                        <div data-element="pages">
+
+                            <button data-element="tab">親</button>
+                            <div id="scoreList_rp" data-element="content" class="scoreList"></div>
+
+                            <button data-element="tab">子</button>
+                            <div id="scoreList_rc" data-element="content" class="scoreList"></div>
                         </div>
-
-                        <div id="scoreList_rp" class="ronScoreList active"></div>
-                        <div id="scoreList_rc" class="ronScoreList"></div>
                     </div>
-
-                    <div id="tab3" class="tabContent">
+                    <div data-element="content">
                         <h3>点数表(ツモ)</h3>
                         <h6>※1人あたり</h6>
 
-                        <div class="tsumoScoreListMenu">
-                            <button class="tsumoScoreButton active" data-tab="scoreList_tp">親</button>
-                            <button class="tsumoScoreButton" data-tab="scoreList_tcp">子→親</button>
-                            <button class="tsumoScoreButton" data-tab="scoreList_tcc">子→子</button>
+                        <div data-element="pages">
+                            <button data-element="tab">親</button>
+                            <div id="scoreList_tp" data-element="content" class="scoreList"></div>
+                            <button data-element="tab">子→親</button>
+                            <div id="scoreList_tcp" data-element="content" class="scoreList"></div>
+                            <button data-element="tab">子→子</button>
+                            <div id="scoreList_tcc" data-element="content" class="scoreList"></div>
+
                         </div>
-
-                        <div id="scoreList_tp" class="tsumoScoreList active"></div>
-                        <div id="scoreList_tcp" class="tsumoScoreList"></div>
-                        <div id="scoreList_tcc" class="tsumoScoreList"></div>
                     </div>
-
-                    <div id="tab4" class="tabContent">
+                    <div data-element="content">
                         <h3>その他</h3>
 
                         書くこと未定。<br><br>ぴっぴろぴー by作者・冬華
                     </div>
-
                 </div>
-
             </div>
 
         </div>
@@ -321,7 +310,7 @@
 
         <button id="resultButton">計算結果</button>
 
-        <div id="result">
+        <div id="resultWrap">
             <div id="resultFu">0符 → 0符</div>
             <div id="resultScore0"></div>
             <div id="resultScore1"></div>
@@ -332,6 +321,7 @@
 
 
 
+        <script src="pageSetting.js"></script>
         <script src="scoreList.js"></script>
         <script src="infoEvent.js"></script>
         <script src="table.js"></script>
