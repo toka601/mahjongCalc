@@ -1,3 +1,39 @@
+/*======================================== 事前設定 ========================================*/
+[data-element="pages"]{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+[data-element="tab"]{
+    flex: 1;
+    padding: 10px;
+    border: 0.5px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+    white-space: nowrap;
+}
+[data-element="tab"].active{
+    background: white;
+    border-bottom: 3px solid #555;
+}
+.tabsContainer{
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    overflow-x: auto;
+}
+[data-element="content"]{
+    display: none;
+}
+[data-element="content"].active{
+    display: block;
+}
+.contentsContainer{
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+
 header{ font-size: 25px; }
 #header{
     display: flex;
@@ -50,7 +86,7 @@ li{
 /* padding→内側 */
 /* margin→外側 */
 
-/* ヘッダー */
+/*======================================== ヘッダー ========================================*/
 #imageButton{
     background: transparent;
     border: none;
@@ -63,21 +99,21 @@ li{
     width: 100%;
 }
 
-/* リセット */
+/*======================================== リセット ========================================*/
 #resetButton{
     width:80px;
     height:30px;
     margin-top: 10px;
 }
 
-/* 入力 */
+/*======================================== 入力 ========================================*/
 #inputWrap{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin-top: 10px;
 }
 
-/* 計算結果 */
+/*======================================== 計算結果ボタン ========================================*/
 #resultButton{
     width:80px;
     height:30px;
@@ -85,8 +121,9 @@ li{
 }
 
 
-/* リザルト */
-#result{
+/*======================================== リザルト ========================================*/
+/*  */
+#resultWrap{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     padding-left: 10px;
@@ -122,7 +159,7 @@ li{
 
 
 
-/* ポップアップ関連 */
+/*======================================== ポップアップ関連 ========================================*/
 .popupOverlay {
     display: none;
 
@@ -169,34 +206,6 @@ li{
     font-size: 28px;
     cursor: pointer;
 }
-.tabMenu, .ronScoreListMenu, .tsumoScoreListMenu {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    overflow-x: auto;
-}
-.tabButton, .ronScoreButton, .tsumoScoreButton {
-    flex: 1;
-    padding: 10px;
-    border: 0.5px solid #ccc;
-    background: #eee;
-    cursor: pointer;
-    white-space: nowrap;
-}
-.tabButton.active, .ronScoreButton.active, .tsumoScoreButton.active {
-    background: white;
-    border-bottom: 3px solid #555;
-}
-.tabContents {
-    flex: 1;
-    overflow-y: auto;
-    padding: 15px;
-}
-.tabContent, .ronScoreList, .tsumoScoreList {
-    display: none;
-}
-.tabContent.active, .ronScoreList.active, .tsumoScoreList.active {
-    display: block;
-}
 
 .descButton, .descDiv{
     width: 100%;
@@ -219,9 +228,12 @@ li{
     display: none;
 }
 
-.ronScoreList.active, .tsumoScoreList.active{
+/*======================================== 点数表 ========================================*/
+/* 点数表は左に1~4飜, 右に5飜以上 */
+.scoreList.active{
     display: flex;
 }
+/* 点数表(左)のセル */
 .scoreListCell{
     padding: 0px;
     width: 55px;
@@ -229,6 +241,7 @@ li{
     font-size: 14px;
     text-align: center;
 }
+/* 点数表(右)のセル */
 .rankedScoreCell{
     display: grid;
     grid-template-rows: 20px 27px;
@@ -236,12 +249,14 @@ li{
     margin: 3px;
     text-align: center;
 }
+/* 点数表(右)のセルの飜表示 */
 .hanCell{
     grid-row: 1;
 	grid-column: 1;
     font-size: 14px;
     border: 1px solid rgba(204, 204, 204, 1);
 }
+/* 点数表(右)のセルの段階表示 */
 .rankCell{
     grid-row: 1;
 	grid-column: 2;
@@ -249,6 +264,7 @@ li{
     border: 1px solid rgba(204, 204, 204, 1);
     color: rgba(225, 100, 0, 1);
 }
+/* 点数表(右)のセルの点数表示 */
 .scoreCell{
     grid-row: 2;
 	grid-column: 1 / span 2;
