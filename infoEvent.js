@@ -8,7 +8,6 @@
 
 // ダブ1「用語解説」のボタン設定
 const descButtons = document.querySelectorAll(".descButton");
-const descContents = document.querySelectorAll(".descContent");
 
 descButtons.forEach(button => {
     button.addEventListener("click", () => {
