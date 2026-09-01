@@ -1,4 +1,5 @@
 /*======================================== 事前設定 ========================================*/
+/* ページとタグとコンテンツ */
 [data-element="pages"]{
     display: flex;
     flex-direction: column;
@@ -30,7 +31,40 @@
 .contentsContainer{
     flex: 1;
     overflow-y: auto;
-    padding: 15px;
+    padding: 1%;
+}
+/* リストとボタン */
+[data-element="list"]{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 10px;
+}
+[data-element="button"]{
+    background-color: rgba(15, 90, 20, 0.5);
+}
+[data-element="button"].active{
+    background-color: rgba(25, 180, 35, 0.5);
+}
+.subContainer{
+    display: none;
+}
+.subContainer.active{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 0px 0px 5px 5px;
+    
+    padding-left: 10px;
+}
+[data-element="list"], 
+[data-element="button"]{
+    padding-left: 4px;
+}
+[data-element="item"]{
+    padding-left: 8px;
 }
 
 
@@ -74,11 +108,11 @@ p{
     background-color: rgba(25, 180, 35, 0.5);
 }
 ul{
-        margin: 0px;
-        padding: 0px 0px 0px 20px;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 5px 5px;
-    }
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 5px 5px;
+}
 li{
     font-size: 10px;
 }
@@ -227,6 +261,8 @@ li{
 .descContent.inactive{
     display: none;
 }
+/*======================================== 一覧 ========================================*/
+
 /*======================================== 点数表 ========================================*/
 /* 点数表は左に1~4飜, 右に5飜以上 */
 .scoreList.active{
