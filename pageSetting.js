@@ -36,11 +36,3 @@ pageses.forEach(pages => {
         });
     }
 });
-/*
-
-<div data-element="pages">
-    <button data-element="tab"></button>
-    <div data-element="content"></div>
-
-</div>
-*/
