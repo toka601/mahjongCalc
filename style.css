@@ -64,6 +64,7 @@
     padding-left: 4px;
 }
 [data-element="item"]{
+    white-space: pre-line;
     padding-left: 8px;
 }
 
