@@ -1,4 +1,7 @@
-document.getElementById("resetButton").addEventListener("click", () => {
+const resetButton = document.getElementById("resetButton");
+
+
+resetButton.addEventListener("click", () => {
     // ラジオボタンを初期状態に戻す
     document.querySelectorAll('input[type="radio"]').forEach(input => {
         input.checked = input.defaultChecked;
