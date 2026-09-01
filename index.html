@@ -31,24 +31,11 @@
 
                 <div data-element="pages">
 
-                    <button data-element="tab">試作段階</button>
+                    <!--<button data-element="tab">試作段階</button>
                     <div data-element="content">
                         <h3>試作段階</h3>
 
-                        <div data-element="list">
-                            <div data-element="button">Abutton</div>
-                            <div data-element="item">Aitem1</div>
-                            <div data-element="list">
-                                <div data-element="button">Bbutton1</div>
-                                <div data-element="item">Bitem1</div>
-                            </div>
-                            <div data-element="list">
-                                <div data-element="button">Bbutton2</div>
-                                <div data-element="item">Bitem2</div>
-                            </div>
-                            <div data-element="item">Aitem2</div>
-                        </div>
-                    </div>
+                    </div>-->
 
                     <button data-element="tab">用語解説</button>
                     <div data-element="content">
@@ -156,80 +143,13 @@
                         <h3>役一覧</h3>
                         <div data-element="pages">
                             <button data-element="tab">通常</button>
-                            <div data-element="content">
-                                <div data-element="pages">
-                                    <button data-element="tab">一飜</button>
-                                    <div data-element="content">
+                            <div data-element="content" id="normalYaku"></div>
 
-                                        <div data-element="list">
-                                            <div data-element="button">1飜</div>
-                                            <div data-element="list">
-                                                <div data-element="button">立直</div>
-                                                <div data-element="item">説明</div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <button data-element="tab">二飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">三飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">六飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">満貫</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">役満</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">ダブル役満</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                </div>
-                            </div>
+                            <button data-element="tab">通常 & ローカル役</button>
+                            <div data-element="content" id="totalYaku"></div>
 
                             <button data-element="tab">ローカル役</button>
-                            <div data-element="content">
-                                <div data-element="pages">
-                                    <button data-element="tab">一飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">二飜</button>
-                                    <div data-element="content">
-                                        
-                                    </div>
-                                    <button data-element="tab">三飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">六飜</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">満貫</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">役満</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                    <button data-element="tab">ダブル役満</button>
-                                    <div data-element="content">
-
-                                    </div>
-                                </div>
-                            </div>
+                            <div data-element="content" id="localYaku"></div>
                         </div>
                     </div>
 
@@ -446,9 +366,11 @@
 
 
         <script src="scoreList.js"></script>
-        <script src="table.js"></script>
+        <script src="yakuList.js"></script>
+
         <script src="calc.js"></script>
 
+        <script src="table.js"></script>
         <script src="infoEvent.js"></script>
         <script src="resetEvent.js"></script>
         <script src="listSetting.js"></script>
