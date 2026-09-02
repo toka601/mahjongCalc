@@ -271,10 +271,14 @@ li{
 }
 /* 点数表(左)のセル */
 .scoreListCell{
+    width: 40%;
+    max-width: 40px;
+
+    height: 20%;
+    max-height: 25px;
+
     padding: 0px;
-    width: 55px;
-    height: 25px;
-    font-size: 14px;
+    font-size: 10px;
     text-align: center;
 }
 /* 点数表(右)のセル */
