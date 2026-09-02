@@ -284,23 +284,22 @@ li{
 /* 点数表(右)のセル */
 .rankedScoreCell{
     display: grid;
-    grid-template-rows: 20px 27px;
-	grid-template-columns: 65px 50px;
+    grid-template-rows: 17px 20px;
+	grid-template-columns: 50px 35px;
     margin: 3px;
+    font-size: 10px;
     text-align: center;
 }
 /* 点数表(右)のセルの飜表示 */
 .hanCell{
     grid-row: 1;
 	grid-column: 1;
-    font-size: 14px;
     border: 1px solid rgba(204, 204, 204, 1);
 }
 /* 点数表(右)のセルの段階表示 */
 .rankCell{
     grid-row: 1;
 	grid-column: 2;
-    font-size: 14px;
     border: 1px solid rgba(204, 204, 204, 1);
     color: rgba(225, 100, 0, 1);
 }
@@ -309,6 +308,5 @@ li{
     grid-row: 2;
 	grid-column: 1 / span 2;
     padding: 2px;
-    font-size: 14px;
     border: 1px solid rgba(204, 204, 204, 1);
 }
