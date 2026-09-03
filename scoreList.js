@@ -174,6 +174,7 @@ function getScore(person, han, fu, hora){
 // ヘルプで表示するリストの作成
 function appendScoreTable(list, index){
     const table = document.createElement("table");
+        table.classList.add("scoreTable");
         const tableHeadLabels = document.createElement("tr");
             for(let i=0; i<=4; i++){
                 const th = document.createElement("th");
@@ -189,8 +190,8 @@ function appendScoreTable(list, index){
             for(let han=0; han<=4; han++){
                 if(han==0){
                     const th = document.createElement("th");
-                    th.classList.add("scoreListCell");
-                    th.classList.add("scoreListSideHeader");
+                        th.classList.add("scoreListCell");
+                        th.classList.add("scoreListSideHeader");
                     if(fu==1) th.textContent = "20";
                     else if(fu==2) th.textContent = "25";
                     else th.textContent = fu * 10;
@@ -200,10 +201,9 @@ function appendScoreTable(list, index){
                     const td = document.createElement("td");
                         td.classList.add("scoreListCell");
                         td.textContent = scoreList[han-1][fu-1][index] * 100;
-                    if(scoreList[han-1][fu-1][5] != ""){
-                        // 満貫以上
-                        td.style.color = "rgba(225, 100, 0, 1)";
-                    }
+                    // 満貫以上
+                    if(scoreList[han-1][fu-1][5] != "") td.style.color = "rgba(225, 100, 0, 1)";
+
                     tr.append(td);
                 }
             }
