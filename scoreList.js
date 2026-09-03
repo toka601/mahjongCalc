@@ -173,43 +173,48 @@ function getScore(person, han, fu, hora){
 
 // ヘルプで表示するリストの作成
 function appendScoreTable(list, index){
-    const table = document.createElement("table");
-        table.classList.add("scoreTable");
-        const tableHeadLabels = document.createElement("tr");
-            for(let i=0; i<=4; i++){
-                const th = document.createElement("th");
-                th.classList.add("scoreListCell");
-                if(i != 0) th.textContent = i + "飜";
-                else th.textContent = "符\\"
-                tableHeadLabels.append(th);
-            }
-        table.append(tableHeadLabels);
-        
-        for(let fu=1; fu<=11; fu++){
-            const tr = document.createElement("tr");
-            for(let han=0; han<=4; han++){
-                if(han==0){
-                    const th = document.createElement("th");
+    const container = document.createElement("div");
+        container.className = "normalScoreList";
+        const table = document.createElement("div");
+            table.classList.add("scoreTable");
+            const tableHeadLabels = document.createElement("div");
+                tableHeadLabels.className = "tableRow";
+                for(let i=0; i<=4; i++){
+                    const th = document.createElement("div");
                         th.classList.add("scoreListCell");
-                        th.classList.add("scoreListSideHeader");
-                    if(fu==1) th.textContent = "20";
-                    else if(fu==2) th.textContent = "25";
-                    else th.textContent = fu * 10;
-
-                    tr.append(th);
-                }else{
-                    const td = document.createElement("td");
-                        td.classList.add("scoreListCell");
-                        td.textContent = scoreList[han-1][fu-1][index] * 100;
-                    // 満貫以上
-                    if(scoreList[han-1][fu-1][5] != "") td.style.color = "rgba(225, 100, 0, 1)";
-
-                    tr.append(td);
+                    if(i != 0) th.textContent = i + "飜";
+                    else th.textContent = "符\\";
+                    tableHeadLabels.append(th);
                 }
+            table.append(tableHeadLabels);
+            
+            for(let fu=1; fu<=11; fu++){
+                const tr = document.createElement("div");
+                    tr.className = "tableRow";
+                for(let han=0; han<=4; han++){
+                    if(han==0){
+                        const th = document.createElement("div");
+                            th.classList.add("scoreListCell");
+                            th.classList.add("scoreListSideHeader");
+                        if(fu==1) th.textContent = "20";
+                        else if(fu==2) th.textContent = "25";
+                        else th.textContent = fu * 10;
+
+                        tr.append(th);
+                    }else{
+                        const td = document.createElement("div");
+                            td.classList.add("scoreListCell");
+                            td.textContent = scoreList[han-1][fu-1][index] * 100;
+                        // 満貫以上
+                        if(scoreList[han-1][fu-1][5] != "") td.style.color = "rgba(225, 100, 0, 1)";
+
+                        tr.append(td);
+                    }
+                }
+                table.append(tr);
             }
-            table.append(tr);
-        }
-    list.append(table);
+        container.append(table);
+    list.append(container);
 
 
     const rankedScoreList = document.createElement("div");
