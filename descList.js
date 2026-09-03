@@ -23,14 +23,42 @@ function createList(...nodes){
 
 const descContent = document.getElementById("descContent");
     descContent.append(
+        /*
+        createList(
+            createButton(""),
+            createItem(""),
+            createList(
+                createButton(""),
+                createItem("")
+            )
+        ),
+         */
+        createList(
+            createButton("符計算について"),
+            createItem("符とは...和了の方法によって加算される成立難易度の数値。点数計算で飜と重ね合わせて使用する。"),
+            createList(
+                createButton("計算式"),
+                createItem(
+                    "・副底...+20" + 
+                    "\n・和了方法...ツモ+2, 門前ロン+10" + 
+                    "\n・面子...刻子、または槓子一つにつき以下の加算" + 
+                    "\n　　　...中張牌{ 明刻+2, 暗刻+4, 明槓+8,  暗槓+16 }" + 
+                    "\n　　　...幺九牌{ 明刻+4, 暗刻+8, 明槓+16, 暗槓+32 }" +
+                    "\n・雀頭...自風牌+2, 場風牌+2, 連風牌+4, 三元牌+2" + 
+                    "\n・待ち...単騎待ち+2, 嵌張待ち+2, 辺張待ち+2" + 
+                    "上記の計算を終えた後、一の位を切り上げる。" +
+                    "\n・例外" + 
+                    "\n　・平和でのツモは加算に関わらず一律20符。" +
+                    "\n　・七対子がは加算に関わらず一律25符" + 
+                    "\n　・上記の例外2種以外の状況で最終結果が30符に足りていない場合(副底のみ)、一律30符になる。"
+                )
+            )
+        ),
         createList(
             createButton("プレイヤーについて"),
             createItem("自家(ｼﾞﾁｬ)...自身のこと。本サイトでは和了した人を指す。"),
             createItem("他家(ﾀｰﾁｬ)...他のプレイヤーのこと。")
-        )
-    );
-
-    descContent.append(
+        ),
         createList(
             createButton("牌の種類について"),
             createList(
