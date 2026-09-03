@@ -44,9 +44,11 @@ const popup = document.getElementById("popup");
 
 document.getElementById("imageButton").addEventListener("click", () => {
     popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
 });
 document.getElementById("closeButton").addEventListener("click", () => {
     popup.style.display = "none";
+    document.body.style.overflow = "";
 });
 
 
