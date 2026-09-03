@@ -227,38 +227,63 @@ h3{ margin: 0px 0px 10px 0px; }
 /*======================================== 点数表 ========================================*/
 /* 点数表は左に1~4飜, 右に5飜以上 */
 
+/* 注意書き */
+h6{
+    margin: 0px;
+}
+.scoreList{
+    display: none;
+}
 .scoreList.active{
     display: flex;
 }
-.scoreTable{
+.normalScoreList{
+    flex: 7;
     table-layout: fixed;
-    width: 60%;
+}
+.scoreTable{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+.tableRow{
+    display: flex;
 }
 /* 点数表(左)のセル */
 .scoreListCell{
+    width: 20%;
+    aspect-ratio: 5 / 2;
     padding: 0px;
     font-size: 10px;
     text-align: center;
+    border: 1px solid rgba(204, 204, 204, 1);
+}
+.rankedScoreList{
+    flex: 3;
 }
 /* 点数表(右)のセル */
 .rankedScoreCell{
     display: grid;
-    grid-template-rows: 17px 20px;
-	grid-template-columns: 50px 35px;
-    margin: 3px;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    height: 12%;
+    margin: 0px 3px 3px 3px;
     font-size: 10px;
-    text-align: center;
 }
 /* 点数表(右)のセルの飜表示 */
 .hanCell{
     grid-row: 1;
 	grid-column: 1;
+    display: grid;
+    place-items: center;
     border: 1px solid rgba(204, 204, 204, 1);
 }
 /* 点数表(右)のセルの段階表示 */
 .rankCell{
     grid-row: 1;
 	grid-column: 2;
+    display: grid;
+    place-items: center;
     border: 1px solid rgba(204, 204, 204, 1);
     color: rgba(225, 100, 0, 1);
 }
@@ -266,6 +291,7 @@ h3{ margin: 0px 0px 10px 0px; }
 .scoreCell{
     grid-row: 2;
 	grid-column: 1 / span 2;
-    padding: 2px;
+    display: grid;
+    place-items: center;
     border: 1px solid rgba(204, 204, 204, 1);
 }
