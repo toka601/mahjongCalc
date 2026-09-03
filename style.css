@@ -57,7 +57,7 @@
     border: 1px solid rgba(204, 204, 204, 1);
     border-radius: 0px 0px 5px 5px;
     
-    padding-left: 10px;
+    padding: 2px 2px 2px 10px;
 }
 [data-element="list"], 
 [data-element="button"]{
