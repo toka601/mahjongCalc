@@ -216,6 +216,10 @@ function appendYakuList(pages, yakuType){
             content.append(situationsList, wholesList, partsList);
         pages.appendChild(content);
 
+        let situCount = 0;
+        let wholeCount = 0;
+        let partCount = 0;
+
         const appending = (content, list) => {
             for(const yaku of list){
                 const listDiv = document.createElement("div");
@@ -229,22 +233,27 @@ function appendYakuList(pages, yakuType){
                     listDiv.append(button, item);
                 content.append(listDiv);
             }
+            return list.length;
         };
 
         // ローカル
         if(yakuType  < 0){
-            appending(situationsList, yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 0) );
-            appending(wholesList,     yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 1) );
-            appending(partsList,      yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 2) );
+            situCount = appending(situationsList, yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 0) );
+            wholeCount = appending(wholesList,    yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 1) );
+            partCount = appending(partsList,      yakuList[i].filter(yaku => yaku[0] == true && yaku[1] == 2) );
         }else if(yakuType  > 0){
-            appending(situationsList, yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 0) );
-            appending(wholesList,     yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 1) );
-            appending(partsList,      yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 2) );
+            situCount = appending(situationsList, yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 0) );
+            wholeCount = appending(wholesList,    yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 1) );
+            partCount = appending(partsList,      yakuList[i].filter(yaku => yaku[0] == false && yaku[1] == 2) );
         }else {
-            appending(situationsList, yakuList[i].filter(yaku => yaku[1] == 0) );
-            appending(wholesList,     yakuList[i].filter(yaku => yaku[1] == 1) );
-            appending(partsList,      yakuList[i].filter(yaku => yaku[1] == 2) );
+            situCount = appending(situationsList, yakuList[i].filter(yaku => yaku[1] == 0) );
+            wholeCount = appending(wholesList,    yakuList[i].filter(yaku => yaku[1] == 1) );
+            partCount = appending(partsList,      yakuList[i].filter(yaku => yaku[1] == 2) );
         }
+        situsButton.textContent += "　<" + situCount + ">";
+        wholesButton.textContent += "　<" + wholeCount + ">";
+        partsButton.textContent += "　<" + partCount + ">";
+        tab.textContent += "<" + (situCount + wholeCount + partCount) + ">";
     }
 }
 
