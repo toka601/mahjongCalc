@@ -187,7 +187,7 @@ h3{ margin: 0px 0px 10px 0px; }
 .contentsContainer{
     flex: 1;
     overflow-y: auto;
-    padding: 1%;
+    padding: 1% 2% 1% 1%;
 }
 /*======================================== 一覧 ========================================*/
 [data-element="list"]{
@@ -255,7 +255,8 @@ h6{
     aspect-ratio: 5 / 2;
     padding: 0px;
     font-size: 10px;
-    text-align: center;
+    display: grid;
+    place-items: center;
     border: 1px solid rgba(204, 204, 204, 1);
 }
 .rankedScoreList{
